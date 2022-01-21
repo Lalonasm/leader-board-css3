@@ -33,8 +33,8 @@ margin-bottom: 30px;
 }
 .players{
     display: grid;
-    /* grid-template-columns: repeat(3 1fr); */
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(3,1fr); */
+    grid-template-columns: repeat(3,1fr);
     grid-row-gap: 30px;
 }
 .player{
@@ -106,4 +106,34 @@ height: 104px;
 .course-duration{
     color: #FF4A60;
     font-family: Open Sans;
+    border-radius: 50%;
+}
+/* .......................
+Media Queries 
+...........................*/
+/* Mobile Device */
+@media only screen and (Max-width:688px){
+    .container{
+        width: 100%;
+    }
+    .players, .blogs,.courses{
+        grid-template-columns: repeat(1,1fr);
+        flex-direction: column;
+    }
+    .player,.blog{
+        flex-direction: column;
+    }
+}
+/* Tablet Devices */
+@media Only screen and (Min-width:688px) and (Max-width:992px) {
+    .container{
+        width: 100%;
+    }
+    .players,.courses{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .blogs{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
 }
